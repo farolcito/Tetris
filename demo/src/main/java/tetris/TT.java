@@ -1,22 +1,29 @@
 package tetris;
 
 public class TT{
-    String strTT = "00X00XXX00000000";
-    String srtTTleft = "00X00XX000X00000";
-     String variable;
 
-    public String existTT(){
-        return strTT;
-    }
-    public String moveLeftTT(String srtTT) {
-    String srtTT = srtTTleft;
 
-    return srtTT;    
+        char[][] TT1 = {{'0', '1', '0', '0'},
+    {'1', '1', '1', '0'},
+    {'0', '0', '0', '0'},
+    {'0', '0', '0', '0'}};
+        char[][] TT2 = {{'0', '1', '0', '0'},
+    {'0', '1', '1', '0'},
+    {'0', '1', '0', '0'},
+    {'0', '0', '0', '0'}};
+        char[][] TT3 = {{'0', '1', '1', '1'},
+    {'0', '0', '1', '0'},
+    {'0', '0', '0', '0'},
+    {'0', '0', '0', '0'}};
+        char[][] TT4 = {{'0', '1', '0', '0'},
+    {'1', '1', '0', '0'},
+    {'0', '1', '0', '0'},
+    {'0', '0', '0', '0'}};   
 
+    char[][][] arrayDeVariables = {TT1,TT2, TT3, TT4};
+
+
+public char[][] existTT(){
+    return TT1;
 }
-
-    
-
- 
-
 }

@@ -1,7 +1,9 @@
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
+import org.junit.Assert;
 import org.junit.Test;
+
 
 import tetris.Square;
 import tetris.TT;
@@ -45,14 +47,15 @@ public class TetrisTest {
     @Test
     public void validformTT(){
     TT tt1 = new TT();
-    assertEquals("00X00XXX00000000", tt1.existTT());
+    Assert.assertArrayEquals({{'0', '1', '0', '0'},
+    {'1', '1', '1', '0'},
+    {'0', '0', '0', '0'},
+    {'0', '0', '0', '0'}}, tt1.existTT());
     }
 
-    @Test
-    public void leftmoveTT(){
-    TT ttleft = new TT();
-    assertEquals("00X00XX000X00000", ttleft.moveLeftTT(String strTT));
-    }
+
+
+   
 }
       
 
