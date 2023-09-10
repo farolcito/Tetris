@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 
 
-public class TT {
+public class TT  extends PieceBase{
     char[][] TT1 = {
             {'0', '1', '0', '0'},
             {'1', '1', '1', '0'},
@@ -34,7 +34,7 @@ public class TT {
  
         
        
-    int i = 0;  
+
 
     public char[][] existTT() {
         return TT1;
@@ -49,12 +49,6 @@ public class TT {
         return TT4;
     }
 
-public char[][] obtenerVariable(int indice) {
-    if (indice >= 0 && indice < arrayDeVariables.length) {
-        return arrayDeVariables[indice];
-    } else {
-        return null;
-    }
-}
+
 
     }
