@@ -45,14 +45,27 @@ public class TetrisTest {
         assertNotNull(d);
     }
     @Test
-    public void validformTT(){
-    TT tt1 = new TT();
-    Assert.assertArrayEquals({{'0', '1', '0', '0'},
-    {'1', '1', '1', '0'},
-    {'0', '0', '0', '0'},
-    {'0', '0', '0', '0'}}, tt1.existTT());
+    public void validformTT() {
+        TT tt1 = new TT();
+        char[][] expected = {
+            {'0', '1', '0', '0'},
+            {'1', '1', '1', '0'},
+            {'0', '0', '0', '0'},
+            {'0', '0', '0', '0'}
+        };
+        
+        Assert.assertArrayEquals(expected, tt1.existTT());
     }
+    @Test
+    public void rotateTT(){
+        TT tt11 = new TT();
 
+        Assert.assertArrayEquals(tt11.existTT(), tt11.obtenerVariable(0));
+        Assert.assertArrayEquals(tt11.rightTT(), tt11.obtenerVariable(1));
+        Assert.assertArrayEquals(tt11.investedTT(), tt11.obtenerVariable(2));
+        Assert.assertArrayEquals(tt11.leftTT(), tt11.obtenerVariable(3));
+
+    }
 
 
    

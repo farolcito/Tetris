@@ -1,37 +1,50 @@
 package tetris;
 
-import java.util.Arrays;
-
 public class Main {
-        public static void main(String[] args) {
-    // Declarar cuatro matrices de tipo char
-    char[][] TT = {{'0', '1', '0', '0'},
-{'1', '1', '1', '0'},
-{'0', '0', '0', '0'},
-{'0', '0', '0', '0'}};
-    char[][] TT1 = {{'0', '1', '0', '0'},
-{'0', '1', '1', '0'},
-{'0', '1', '0', '0'},
-{'0', '0', '0', '0'}};
-    char[][] TT2 = {{'0', '1', '1', '1'},
-{'0', '0', '1', '0'},
-{'0', '0', '0', '0'},
-{'0', '0', '0', '0'}};
-    char[][] TT3 = {{'0', '1', '0', '0'},
-{'1', '1', '0', '0'},
-{'0', '1', '0', '0'},
-{'0', '0', '0', '0'}};
+    char[][] Board = {
+        {'0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0'},
+        {'0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0'},
+        {'0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0'},
+        {'0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0'},
+        {'0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0'},
+        {'0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0'},
+        {'0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0'},
+        {'0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0'},
+        {'0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0'},
+        {'0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0'},
+    };
 
-    // Declarar un array de char que contenga estas matrices
-    char[][][] arrayDeVariables = {TT,TT1, TT2, TT3};
+    public void agregarMatriz(int fila, int columna, char[][] nuevaMatriz) {
+        for (int i = 0; i < nuevaMatriz.length; i++) {
+            for (int j = 0; j < nuevaMatriz[i].length; j++) {
+                if (fila + i < Board.length && columna + j < Board[0].length) {
+                    Board[fila + i][columna + j] = nuevaMatriz[i][j];
+                }
+            }
+        }
+    }
 
-    // Acceder a las matrices a través del array
-    System.out.println("El valor de la primera matriz es: " + Arrays.deepToString(arrayDeVariables[0]));
-    System.out.println("El valor de la segunda matriz es: " + Arrays.deepToString(arrayDeVariables[1]));
-    System.out.println("El valor de la tercera matriz es: " + Arrays.deepToString(arrayDeVariables[2]));
-    System.out.println("El valor de la cuarta matriz es: " + Arrays.deepToString(arrayDeVariables[3]));
+    public static void main(String[] args) {
+        Main main = new Main(); // Crear una instancia de la clase Main
+
+        char[][] TT3 = {
+            {'0', '1', '1', '1'},
+            {'0', '0', '1', '0'},
+            {'0', '0', '0', '0'},
+            {'0', '0', '0', '0'}
+        };
+
+        // Agregar la matriz TT3 en la posición (2, 5) de la matriz Board
+        main.agregarMatriz(2, 5, TT3);
+
+        // Imprimir la matriz Board
+        for (char[] fila : main.Board) {
+            for (char c : fila) {
+                System.out.print(c + " ");
+            }
+            System.out.println();
+        }
+    }
 }
-}
-            
 
 
