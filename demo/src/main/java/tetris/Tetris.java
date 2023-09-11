@@ -1,6 +1,6 @@
 package tetris;
 
-public class Tetris {
+public class Tetris extends Board{
     
 
 }

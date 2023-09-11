@@ -2,8 +2,8 @@ package tetris;
 
 public interface iRotator {
     
-        char[][] rotateLeft(int indice);
+        char[][] rotateLeft();
         
-        char[][] rotateRight(int indice);
+        char[][] rotateRight();
     
 }

@@ -30,9 +30,13 @@ public class TT  extends PieceBase{
             {'0', '0', '0', '0'}
         };   
 
-        char[][][] arrayDeVariables = {TT1, TT2, TT3, TT4};
+        public char[][][] arrayDeVariables = {TT1, TT2, TT3, TT4};
  
         
+            public TT(){
+                 super.arrayDeVariables = new char[][][]{TT1, TT2, TT3, TT4};
+            }
+    
        
 
 
