@@ -20,4 +20,18 @@ public class Dog {
        {'1', '0', '0', '0'},
        {'1', '0', '0', '0'}};
 }
+char[][][] arrayDeVariables = { Dog1, Dog2, Dog3, Dog4};
+
+public char[][] existDog() {
+    return Dog1;
+}
+public char[][] rightDog() {
+    return Dog2;
+}
+public char[][] investedDog() {
+    return Dog3;
+}
+public char[][] leftDog() {
+    return Dog4;
+}
 }
