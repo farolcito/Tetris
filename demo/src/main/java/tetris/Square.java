@@ -1,7 +1,7 @@
 package tetris;
 
-public class Square {
-        public static void SquareRotate(String[] args) {
+public class Square extends PieceBase{
+
     // Declarar cuatro matrices de tipo char
     char[][] Square1 = {{'0', '1', '1', '0'},
 {'0', '1', '1', '0'},
@@ -21,7 +21,7 @@ public class Square {
 {'0', '0', '0', '0'}};
 
 
-  }
+  
   char[][][] arrayDeVariables = {Square1, Square2, Square3, Square4};
 
         

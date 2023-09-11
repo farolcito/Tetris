@@ -2,7 +2,7 @@ package tetris;
 
 public class L {
     
-public static void LRotate(String[] args) {
+
     
  char[][] L1 = {{'0', '1', '0', '0'},
 {'0', '1', '0', '0'},
@@ -20,7 +20,7 @@ public static void LRotate(String[] args) {
 {'0', '0', '1', '0'},
 {'1', '1', '1', '0'},
 {'0', '0', '0', '0'}};
-}
+
 char[][][] arrayDeVariables = {L1, L2, L3, L4}; 
 
 public char[][] existL() {

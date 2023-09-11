@@ -1,7 +1,7 @@
 package tetris;
 
 public class Stick {
-        public static void StickRotate(String[] args) {
+
     
             char[][] Stick1 = {{'0', '1', '0', '0'},
            {'0', '1', '0', '0'},
@@ -19,7 +19,8 @@ public class Stick {
            {'0', '0', '0', '0'},
            {'1', '1', '1', '1'},
            {'0', '0', '0', '0'}};
-           }
+           
+
            char[][][] arrayDeVariables = {Stick1, Stick2, Stick3, Stick4};
 
            public char[][] existStick() {
