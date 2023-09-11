@@ -21,7 +21,22 @@ public class Square {
 {'0', '0', '0', '0'}};
 
 
+  }
+  char[][][] arrayDeVariables = {Square1, Square2, Square3, Square4};
 
+        
+
+        public char[][] existSquare() {
+            return Square1;
+        }
+        public char[][] rightSquare() {
+            return Square2;
+        }
+        public char[][] investedSquare() {
+            return Square3;
+        }
+        public char[][] leftSquare() {
+            return Square4;
         }
     }
 
