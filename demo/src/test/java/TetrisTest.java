@@ -67,7 +67,7 @@ public class TetrisTest {
         Assert.assertArrayEquals(tt11.leftTT(), tt11.rotateRight());
         Assert.assertArrayEquals(tt11.existTT(), tt11.rotateRight());
     }
-@Test
+    @Test
     public void rotateLeftTT(){
         TT tt11 = new TT();
 
@@ -158,6 +158,7 @@ public class TetrisTest {
     
     
 }
+
 
 
 }
