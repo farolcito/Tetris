@@ -124,6 +124,19 @@ public class TetrisTest {
         {'0', '0', '0', '0','0', '0', '0', '0', '0', '0', '0', '0', '0', '0','0', '0', '0', '0', '0', '0'},
         {'0', '0', '0', '0','0', '0', '0', '0', '0', '0', '0', '0', '0', '0','0', '0', '0', '0', '0', '0'},
        };
+       char[][] BoardExpected1={
+        {'0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0' ,'0' ,'0' ,'0', '0', '0', '0', '0' ,'0'},
+        {'0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0','0' ,'0'},
+        {'0', '1', '0', '0','0', '0', '0', '0', '0', '0', '0', '0', '0', '0','0', '0', '0', '0', '0', '0'},
+        {'1', '1', '1', '0','0', '0', '0', '0', '0', '0', '0', '0', '0', '0','0', '0', '0', '0', '0', '0'},
+        {'0', '0', '0', '0','0', '0', '0', '0', '0', '0', '0', '0', '0', '0','0', '0', '0', '0', '0', '0'},
+        {'0', '0', '0', '0','0', '0', '0', '0', '0', '0', '0', '0', '0', '0','0', '0', '0', '0', '0', '0'},
+        {'0', '0', '0', '0','0', '0', '0', '0', '0', '0', '0', '0', '0', '0','0', '0', '0', '0', '0', '0'},
+        {'0', '0', '0', '0','0', '0', '0', '0', '0', '0', '0', '0', '0', '0','0', '0', '0', '0', '0', '0'},
+        {'0', '0', '0', '0','0', '0', '0', '0', '0', '0', '0', '0', '0', '0','0', '0', '0', '0', '0', '0'},
+        {'0', '0', '0', '0','0', '0', '0', '0', '0', '0', '0', '0', '0', '0','0', '0', '0', '0', '0', '0'},
+       };
+
        // Matriz que deseas agregar
        char[][] TT1 = {
         {'0', '1', '0', '0'},
@@ -135,9 +148,16 @@ public class TetrisTest {
     // Especificar la posición de inicio en la matriz grande donde deseas agregar TT1
     int filaInicio = 0;       // Fila de inicio en la matriz grande
     int columnaInicio = 0;    // Columna de inicio en la matriz grande
-
-    Assert.assertArrayEquals(BoardExpected, board1.moverMatrizAbajoSiEsPosible(TT1, filaInicio, columnaInicio));
-    }
+    
+    
+    board1.agregarMatriz(filaInicio, columnaInicio, TT1);
+    
+    Assert.assertArrayEquals(BoardExpected, board1.moverMatrizAbajoSiEsPosible());
+    Assert.assertArrayEquals(BoardExpected, board1.Boardtetris);
+    Assert.assertArrayEquals(BoardExpected1, board1.moverMatrizAbajoSiEsPosible());
+    
+    
+}
 
 
 }
