@@ -49,10 +49,9 @@ public class TetrisTest {
     public void validformL() {
         L l1 = new L();
         char[][] expected = {
-            {'0', '1', '0', '0'},
-            {'0', '1', '0', '0'},
-            {'0', '1', '1', '0'},
-            {'0', '0', '0', '0'}
+            { '1', '0'},
+            { '1', '0'},
+            { '1', '1'}
         };
         
         Assert.assertArrayEquals(expected, l1.existL());
@@ -79,10 +78,8 @@ public class TetrisTest {
     public void validformDog() {
         Dog d1 = new Dog();
         char[][] expected = {
-            {'0', '1', '1', '0'},
-            {'1', '1', '0', '0'},
-            {'0', '0', '0', '0'},
-            {'0', '0', '0', '0'}
+       {'0', '1', '1' },
+       {'1', '1', '0' }
         };
         
         Assert.assertArrayEquals(expected, d1.existDog());
@@ -110,10 +107,8 @@ public class TetrisTest {
     public void validformSquare() {
         Square s1 = new Square();
         char[][] expected = {
-            {'0', '1', '1', '0'},
-            {'0', '1', '1', '0'},
-            {'0', '0', '0', '0'},
-            {'0', '0', '0', '0'}
+            { '1', '1' },
+            { '1', '1' }
         };
         
         Assert.assertArrayEquals(expected, s1.existSquare());
@@ -141,10 +136,10 @@ public class TetrisTest {
     public void validformStick() {
         Stick s11 = new Stick();
         char[][] expected = {
-            {'0', '1', '0', '0'},
-            {'0', '1', '0', '0'},
-            {'0', '1', '0', '0'},
-            {'0', '1', '0', '0'}
+            { '1'},
+            { '1'},
+            { '1'},
+            { '1'}
         };
         
         Assert.assertArrayEquals(expected, s11.existStick());
@@ -170,10 +165,9 @@ public class TetrisTest {
     public void validformTT() {
         TT tt1 = new TT();
         char[][] expected = {
-            {'0', '1', '0', '0'},
-            {'1', '1', '1', '0'},
-            {'0', '0', '0', '0'},
-            {'0', '0', '0', '0'}
+            {'0', '1', '0'},
+            {'1', '1', '1'},
+
         };
         
         Assert.assertArrayEquals(expected, tt1.existTT());
@@ -215,10 +209,9 @@ public class TetrisTest {
        };
        // Matriz que deseas agregar
        char[][] TT1 = {
-        {'0', '1', '0', '0'},
-        {'1', '1', '1', '0'},
-        {'0', '0', '0', '0'},
-        {'0', '0', '0', '0'}
+        {'0', '1', '0'},
+        {'1', '1', '1'}
+
     };
 
     // Especificar la posición de inicio en la matriz grande donde deseas agregar TT1
@@ -258,29 +251,97 @@ public class TetrisTest {
         {'0', '0', '0', '0','0', '0', '0', '0', '0', '0', '0', '0', '0', '0','0', '0', '0', '0', '0', '0'},
         {'0', '0', '0', '0','0', '0', '0', '0', '0', '0', '0', '0', '0', '0','0', '0', '0', '0', '0', '0'},
        };
+       char[][] BoardExpected2={
+        {'0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0' ,'0' ,'0' ,'0', '0', '0', '0', '0' ,'0'},
+        {'0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0','0' ,'0'},
+        {'0', '0', '0', '0','0', '0', '0', '0', '0', '0', '0', '0', '0', '0','0', '0', '0', '0', '0', '0'},
+        {'0', '1', '0', '0','0', '0', '0', '0', '0', '0', '0', '0', '0', '0','0', '0', '0', '0', '0', '0'},
+        {'1', '1', '1', '0','0', '0', '0', '0', '0', '0', '0', '0', '0', '0','0', '0', '0', '0', '0', '0'},
+        {'0', '0', '0', '0','0', '0', '0', '0', '0', '0', '0', '0', '0', '0','0', '0', '0', '0', '0', '0'},
+        {'0', '0', '0', '0','0', '0', '0', '0', '0', '0', '0', '0', '0', '0','0', '0', '0', '0', '0', '0'},
+        {'0', '0', '0', '0','0', '0', '0', '0', '0', '0', '0', '0', '0', '0','0', '0', '0', '0', '0', '0'},
+        {'0', '0', '0', '0','0', '0', '0', '0', '0', '0', '0', '0', '0', '0','0', '0', '0', '0', '0', '0'},
+        {'0', '0', '0', '0','0', '0', '0', '0', '0', '0', '0', '0', '0', '0','0', '0', '0', '0', '0', '0'},
+       };
+       char[][] BoardExpected3={
+        {'0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0' ,'0' ,'0' ,'0', '0', '0', '0', '0' ,'0'},
+        {'0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0','0' ,'0'},
+        {'0', '0', '0', '0','0', '0', '0', '0', '0', '0', '0', '0', '0', '0','0', '0', '0', '0', '0', '0'},
+        {'0', '0', '0', '0','0', '0', '0', '0', '0', '0', '0', '0', '0', '0','0', '0', '0', '0', '0', '0'},
+        {'0', '0', '0', '0','0', '0', '0', '0', '0', '0', '0', '0', '0', '0','0', '0', '0', '0', '0', '0'},
+        {'0', '0', '0', '0','0', '0', '0', '0', '0', '0', '0', '0', '0', '0','0', '0', '0', '0', '0', '0'},
+        {'0', '0', '0', '0','0', '0', '0', '0', '0', '0', '0', '0', '0', '0','0', '0', '0', '0', '0', '0'},
+        {'0', '0', '0', '0','0', '0', '0', '0', '0', '0', '0', '0', '0', '0','0', '0', '0', '0', '0', '0'},
+        {'0', '1', '0', '0','0', '0', '0', '0', '0', '0', '0', '0', '0', '0','0', '0', '0', '0', '0', '0'},
+        {'1', '1', '1', '0','0', '0', '0', '0', '0', '0', '0', '0', '0', '0','0', '0', '0', '0', '0', '0'},
+       };
 
        // Matriz que deseas agregar
        char[][] TT1 = {
-        {'0', '1', '0', '0'},
-        {'1', '1', '1', '0'},
-        {'0', '0', '0', '0'},
-        {'0', '0', '0', '0'}
+        {'0', '1', '0',},
+        {'1', '1', '1',},
+
     };
 
     // Especificar la posición de inicio en la matriz grande donde deseas agregar TT1
     int filaInicio = 0;       // Fila de inicio en la matriz grande
     int columnaInicio = 0;    // Columna de inicio en la matriz grande
     
-    
     board1.agregarMatriz(filaInicio, columnaInicio, TT1);
     
     Assert.assertArrayEquals(BoardExpected, board1.moverMatrizAbajoSiEsPosible());
     Assert.assertArrayEquals(BoardExpected, board1.Boardtetris);
     Assert.assertArrayEquals(BoardExpected1, board1.moverMatrizAbajoSiEsPosible());
-    
-    
+    Assert.assertArrayEquals(BoardExpected2, board1.moverMatrizAbajoSiEsPosible());
+    board1.moverMatrizAbajoSiEsPosible();
+    board1.moverMatrizAbajoSiEsPosible();
+    board1.moverMatrizAbajoSiEsPosible();
+    board1.moverMatrizAbajoSiEsPosible();
+    Assert.assertArrayEquals(BoardExpected3, board1.moverMatrizAbajoSiEsPosible());
 }
 
+    @Test
+    public void pieceRotateInBoard() {
+        Board board1 = new Board();
+        TT tt11 = new  TT();
+        char[][] BoardExpected = {
+        {'0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0' ,'0' ,'0' ,'0', '0', '0', '0', '0' ,'0'},
+        {'0', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0','0' ,'0'},
+        {'0', '1', '1', '0','0', '0', '0', '0', '0', '0', '0', '0', '0', '0','0', '0', '0', '0', '0', '0'},
+        {'0', '1', '0', '0','0', '0', '0', '0', '0', '0', '0', '0', '0', '0','0', '0', '0', '0', '0', '0'},
+        {'0', '0', '0', '0','0', '0', '0', '0', '0', '0', '0', '0', '0', '0','0', '0', '0', '0', '0', '0'},
+        {'0', '0', '0', '0','0', '0', '0', '0', '0', '0', '0', '0', '0', '0','0', '0', '0', '0', '0', '0'},
+        {'0', '0', '0', '0','0', '0', '0', '0', '0', '0', '0', '0', '0', '0','0', '0', '0', '0', '0', '0'},
+        {'0', '0', '0', '0','0', '0', '0', '0', '0', '0', '0', '0', '0', '0','0', '0', '0', '0', '0', '0'},
+        {'0', '0', '0', '0','0', '0', '0', '0', '0', '0', '0', '0', '0', '0','0', '0', '0', '0', '0', '0'},
+        {'0', '0', '0', '0','0', '0', '0', '0', '0', '0', '0', '0', '0', '0','0', '0', '0', '0', '0', '0'},
+        };
+    
+        char[][] tt1 = {
+                {'0', '1', '0'},
+                {'1', '1', '1'},
+        };
+    
+        int filaInicio = 0;
+        int columnaInicio = 0;
+    
+        board1.agregarMatriz(filaInicio, columnaInicio, tt1);
+        tt11.rotateRight();
+    
+        char[][] resultadoMoverAbajo = board1.moverMatrizAbajoSiEsPosible();
+    
+        // Imprimir la matriz resultante
+        System.out.println("Resultado:");
+        for (int i = 0; i < resultadoMoverAbajo.length; i++) {
+            for (int j = 0; j < resultadoMoverAbajo[i].length; j++) {
+                System.out.print(resultadoMoverAbajo[i][j] + " ");
+            }
+            System.out.println(); // Nueva línea después de cada fila
+        }
+    
+        // Verificar si la matriz resultante coincide con la matriz esperada
+        Assert.assertArrayEquals(BoardExpected, resultadoMoverAbajo);
+    }
 
 
 }

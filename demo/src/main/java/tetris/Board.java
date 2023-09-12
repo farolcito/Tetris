@@ -68,6 +68,56 @@ public class Board extends PieceBase{
 
         return Boardtetris; // Retorna la matriz Board actualizada
     }
+    public  char[][] eliminarFilasYColumnasDeCeros(char[][] matriz) {
+        int numRows = matriz.length;
+        int numCols = matriz[0].length;
+        boolean[] filaNoCero = new boolean[numRows];
+        boolean[] columnaNoCero = new boolean[numCols];
+        int numFilasNoCero = 0;
+        int numColumnasNoCero = 0;
+    
+        // Encuentra las filas que no consisten en ceros
+        for (int i = 0; i < numRows; i++) {
+            for (int j = 0; j < numCols; j++) {
+                if (matriz[i][j] != '0') {
+                    filaNoCero[i] = true;
+                    columnaNoCero[j] = true;
+                }
+            }
+        }
+    
+        // Cuenta las filas y columnas que no son completas de ceros
+        for (int i = 0; i < numRows; i++) {
+            if (filaNoCero[i]) {
+                numFilasNoCero++;
+            }
+        }
+        for (int j = 0; j < numCols; j++) {
+            if (columnaNoCero[j]) {
+                numColumnasNoCero++;
+            }
+        }
+    
+        // Crea una nueva matriz sin las filas y columnas completas de ceros
+        char[][] nuevaMatriz = new char[numFilasNoCero][numColumnasNoCero];
+        int nuevaFila = 0;
+    
+        for (int i = 0; i < numRows; i++) {
+            if (filaNoCero[i]) {
+                int nuevaColumna = 0;
+                for (int j = 0; j < numCols; j++) {
+                    if (columnaNoCero[j]) {
+                        nuevaMatriz[nuevaFila][nuevaColumna] = matriz[i][j];
+                        nuevaColumna++;
+                    }
+                }
+                nuevaFila++;
+            }
+        }
+    
+        return nuevaMatriz;
+    }
+    
     /* 
         {'0', '0', '0', '0','0', '0', '0', '0', '0', '0'},
         {'0', '0', '0', '0','0', '0', '0', '0', '0', '0'},
