@@ -1,6 +1,6 @@
 package tetris;
 
-public class Stick {
+public class Stick extends PieceBase {
 
     
             char[][] Stick1 = {{'0', '1', '0', '0'},
@@ -23,6 +23,9 @@ public class Stick {
 
            char[][][] arrayDeVariables = {Stick1, Stick2, Stick3, Stick4};
 
+           public Stick(){
+            super.arrayDeVariables = new char[][][]{Stick1, Stick2, Stick3, Stick4};
+        }
            public char[][] existStick() {
             return Stick1;
         }

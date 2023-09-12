@@ -3,15 +3,18 @@ package tetris;
 public class Square extends PieceBase{
 
     // Declarar cuatro matrices de tipo char
-    char[][] Square1 = {{'0', '1', '1', '0'},
+    char[][] Square1 = {
+{'0', '1', '1', '0'},
 {'0', '1', '1', '0'},
 {'0', '0', '0', '0'},
 {'0', '0', '0', '0'}};
-    char[][] Square2 = {{'0', '1', '1', '0'},
+    char[][] Square2 = {
+{'0', '1', '1', '0'},
 {'0', '1', '1', '0'},
 {'0', '0', '0', '0'},
 {'0', '0', '0', '0'}};
-    char[][] Square3 = {{'0', '1', '1', '0'},
+    char[][] Square3 = {
+{'0', '1', '1', '0'},
 {'0', '1', '1', '0'},
 {'0', '0', '0', '0'},
 {'0', '0', '0', '0'}};
@@ -24,7 +27,9 @@ public class Square extends PieceBase{
   
   char[][][] arrayDeVariables = {Square1, Square2, Square3, Square4};
 
-        
+  public Square(){
+    super.arrayDeVariables = new char[][][]{Square1, Square2, Square3, Square4};
+}
 
         public char[][] existSquare() {
             return Square1;

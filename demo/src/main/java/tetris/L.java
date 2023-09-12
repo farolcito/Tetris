@@ -1,6 +1,6 @@
 package tetris;
 
-public class L {
+public class L extends PieceBase{
     
 
     
@@ -22,6 +22,10 @@ public class L {
 {'0', '0', '0', '0'}};
 
 char[][][] arrayDeVariables = {L1, L2, L3, L4}; 
+
+public L(){
+    super.arrayDeVariables = new char[][][]{L1, L2, L3, L4};
+}
 
 public char[][] existL() {
     return L1;
