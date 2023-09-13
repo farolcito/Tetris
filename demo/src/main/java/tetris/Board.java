@@ -31,7 +31,11 @@ public class Board extends PieceBase{
     int lose = 0;
     int rows = 10;
     int cols = 20;
-    
+
+    public char[][] confirm(){
+        return Boardtetris;
+    }
+
     public void checkAndPrintGameWon() {
         if (lastFiveRowsAreFull()) {
             System.out.println("¡Has ganado el juego!");
@@ -67,11 +71,21 @@ public class Board extends PieceBase{
     
         return true; // Todas las celdas son "1", las filas están llenas
     }
-
+    public char[][] fillFirstColumnWithOnes() {
+        int numRows = Boardtetris.length;
+    
+        // Llena la primera columna con "1"
+        for (int i = 0; i < numRows; i++) {
+            Boardtetris[i][0] = '1';
+        }
+    
+        // Retorna la matriz actualizada
+        return Boardtetris;
+    }
+    
     public boolean checkIfGameLost() {
         int numRows = Boardtetris.length;
         int numCols = Boardtetris[0].length;
-    
         // Recorre cada columna
         for (int j = 0; j < numCols; j++) {
             boolean columnaLlena = true; // Suponemos que la columna está llena de "1"
@@ -87,7 +101,8 @@ public class Board extends PieceBase{
         }
     
         return false; // El juego no se ha perdido
-    }    
+    }
+    
     
     public void tick() {
         if (sePuedeMover() && lose == 0 && rowsDeleted != 5) {        //Funcion booleana que verifica si la pieza puede seguir bajando

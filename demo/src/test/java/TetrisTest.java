@@ -234,6 +234,24 @@ char [][] inputMatrix = s11.existStick();
 
     Assert.assertArrayEquals(BoardExpected, board.agregarMatriz(filaInicio, columnaInicio, TT1));
     }
+    @Test 
+    public void boardConfirm(){
+        Board board = new Board();
+        char[][] BoardExpected = {
+            {'0', '0', '0', '0','0', '0', '0', '0', '0', '0', '0', '0', '0', '0','0', '0', '0', '0', '0', '0'},
+            {'0', '0', '0', '0','0', '0', '0', '0', '0', '0', '0', '0', '0', '0','0', '0', '0', '0', '0', '0'},
+            {'0', '0', '0', '0','0', '0', '0', '0', '0', '0', '0', '0', '0', '0','0', '0', '0', '0', '0', '0'},
+            {'0', '0', '0', '0','0', '0', '0', '0', '0', '0', '0', '0', '0', '0','0', '0', '0', '0', '0', '0'},
+            {'0', '0', '0', '0','0', '0', '0', '0', '0', '0', '0', '0', '0', '0','0', '0', '0', '0', '0', '0'},
+            {'0', '0', '0', '0','0', '0', '0', '0', '0', '0', '0', '0', '0', '0','0', '0', '0', '0', '0', '0'},
+            {'0', '0', '0', '0','0', '0', '0', '0', '0', '0', '0', '0', '0', '0','0', '0', '0', '0', '0', '0'},
+            {'0', '0', '0', '0','0', '0', '0', '0', '0', '0', '0', '0', '0', '0','0', '0', '0', '0', '0', '0'},
+            {'0', '0', '0', '0','0', '0', '0', '0', '0', '0', '0', '0', '0', '0','0', '0', '0', '0', '0', '0'},
+            {'0', '0', '0', '0','0', '0', '0', '0', '0', '0', '0', '0', '0', '0','0', '0', '0', '0', '0', '0'},
+        };
+        Assert.assertArrayEquals(BoardExpected, board.confirm());
+
+    }
     @Test
     public void pieceMotion() {
         Board board1 = new Board();
@@ -353,7 +371,7 @@ char [][] inputMatrix = s11.existStick();
         Assert.assertArrayEquals(tt11.existTT(), tt11.rotateLeft(inputMatrix));
     }
     @Test
-    public void jajaja(){
+    public void genradorFormaRandom(){
         PieceBase ttPiece = new TT();
         
 
@@ -382,9 +400,9 @@ char [][] inputMatrix = s11.existStick();
     @Test
     public void Perder(){
     Board board = new Board();
-    if (board.checkIfGameLost()) {
-    System.out.println("¡Has perdido el juego!");
-}
+    
+    board.fillFirstColumnWithOnes();
+    board.checkIfGameLost();
     }
 
     }
