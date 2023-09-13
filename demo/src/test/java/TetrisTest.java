@@ -3,7 +3,7 @@ import static org.junit.Assert.assertNotNull;
 
 import org.junit.Assert;
 import org.junit.Test;
-
+import java.util.Random;
 
 import tetris.Square;
 import tetris.TT;
@@ -59,20 +59,22 @@ public class TetrisTest {
     @Test
     public void rotateRightL(){
         L l1 = new L();
+        char[][] inputMatrix = l1.existL();
 
-        Assert.assertArrayEquals(l1.rightL(), l1.rotateRight());
-        Assert.assertArrayEquals(l1.investedL(), l1.rotateRight());
-        Assert.assertArrayEquals(l1.leftL(), l1.rotateRight());
-        Assert.assertArrayEquals(l1.existL(), l1.rotateRight());
+        Assert.assertArrayEquals(l1.rightL(), l1.rotateRight(inputMatrix));
+        Assert.assertArrayEquals(l1.investedL(), l1.rotateRight(inputMatrix));
+        Assert.assertArrayEquals(l1.leftL(), l1.rotateRight(inputMatrix));
+        Assert.assertArrayEquals(l1.existL(), l1.rotateRight(inputMatrix));
     }
 @Test
     public void rotateLeftL(){
         L l1 = new L();
+        char[][] inputMatrix = l1.existL();
 
-        Assert.assertArrayEquals(l1.leftL(), l1.rotateLeft());
-        Assert.assertArrayEquals(l1.investedL(), l1.rotateLeft());
-        Assert.assertArrayEquals(l1.rightL(), l1.rotateLeft());
-        Assert.assertArrayEquals(l1.existL(), l1.rotateLeft());
+        Assert.assertArrayEquals(l1.leftL(), l1.rotateLeft(inputMatrix));
+        Assert.assertArrayEquals(l1.investedL(), l1.rotateLeft(inputMatrix));
+        Assert.assertArrayEquals(l1.rightL(), l1.rotateLeft(inputMatrix));
+        Assert.assertArrayEquals(l1.existL(), l1.rotateLeft(inputMatrix));
     }
      @Test
     public void validformDog() {
@@ -87,21 +89,22 @@ public class TetrisTest {
     @Test
     public void rotateRightDog(){
         Dog d1 = new Dog();
-
+        char[][] inputMatrix = d1.existDog();
         
-        Assert.assertArrayEquals(d1.rightDog(), d1.rotateRight());
-        Assert.assertArrayEquals(d1.investedDog(), d1.rotateRight());
-        Assert.assertArrayEquals(d1.leftDog(), d1.rotateRight());
-        Assert.assertArrayEquals(d1.existDog(), d1.rotateRight());
+        Assert.assertArrayEquals(d1.rightDog(), d1.rotateRight(inputMatrix));
+        Assert.assertArrayEquals(d1.investedDog(), d1.rotateRight(inputMatrix));
+        Assert.assertArrayEquals(d1.leftDog(), d1.rotateRight(inputMatrix));
+        Assert.assertArrayEquals(d1.existDog(), d1.rotateRight(inputMatrix));
     }
 @Test
     public void rotateLeftDog(){
         Dog d1 = new Dog();
+        char[][] inputMatrix = d1.existDog();
 
-        Assert.assertArrayEquals(d1.leftDog(), d1.rotateLeft());
-        Assert.assertArrayEquals(d1.investedDog(), d1.rotateLeft());
-        Assert.assertArrayEquals(d1.rightDog(), d1.rotateLeft());
-        Assert.assertArrayEquals(d1.existDog(), d1.rotateLeft());
+        Assert.assertArrayEquals(d1.leftDog(), d1.rotateLeft(inputMatrix));
+        Assert.assertArrayEquals(d1.investedDog(), d1.rotateLeft(inputMatrix));
+        Assert.assertArrayEquals(d1.rightDog(), d1.rotateLeft(inputMatrix));
+        Assert.assertArrayEquals(d1.existDog(), d1.rotateLeft(inputMatrix));
     }
      @Test
     public void validformSquare() {
@@ -116,20 +119,22 @@ public class TetrisTest {
     @Test
     public void rotateRightSquare(){
         Square s1 = new Square();
+        char[][] inputMatrix = s1.existSquare();
 
-        Assert.assertArrayEquals(s1.rightSquare(), s1.rotateRight());
-        Assert.assertArrayEquals(s1.investedSquare(), s1.rotateRight());
-        Assert.assertArrayEquals(s1.leftSquare(), s1.rotateRight());
-        Assert.assertArrayEquals(s1.existSquare(), s1.rotateRight());
+        Assert.assertArrayEquals(s1.rightSquare(), s1.rotateRight(inputMatrix));
+        Assert.assertArrayEquals(s1.investedSquare(), s1.rotateRight(inputMatrix));
+        Assert.assertArrayEquals(s1.leftSquare(), s1.rotateRight(inputMatrix));
+        Assert.assertArrayEquals(s1.existSquare(), s1.rotateRight(inputMatrix));
     }
 @Test
     public void rotateLeftSquare(){
         Square s1 = new Square();
+        char[][] inputMatrix = s1.existSquare();
 
-        Assert.assertArrayEquals(s1.leftSquare(), s1.rotateLeft());
-        Assert.assertArrayEquals(s1.investedSquare(), s1.rotateLeft());
-        Assert.assertArrayEquals(s1.rightSquare(), s1.rotateLeft());
-        Assert.assertArrayEquals(s1.existSquare(), s1.rotateLeft());
+        Assert.assertArrayEquals(s1.leftSquare(), s1.rotateLeft(inputMatrix));
+        Assert.assertArrayEquals(s1.investedSquare(), s1.rotateLeft(inputMatrix));
+        Assert.assertArrayEquals(s1.rightSquare(), s1.rotateLeft(inputMatrix));
+        Assert.assertArrayEquals(s1.existSquare(), s1.rotateLeft(inputMatrix));
     }
   
      @Test
@@ -147,19 +152,22 @@ public class TetrisTest {
     @Test
     public void rotateRightStick(){
         Stick s11 = new Stick();
+        char [][] inputMatrix = s11.existStick();
 
-        Assert.assertArrayEquals(s11.rightStick(), s11.rotateRight());
-        Assert.assertArrayEquals(s11.investedStick(), s11.rotateRight());
-        Assert.assertArrayEquals(s11.leftStick(), s11.rotateRight());
-        Assert.assertArrayEquals(s11.existStick(), s11.rotateRight());
+        Assert.assertArrayEquals(s11.rightStick(), s11.rotateRight(inputMatrix));
+        Assert.assertArrayEquals(s11.investedStick(), s11.rotateRight(inputMatrix));
+        Assert.assertArrayEquals(s11.leftStick(), s11.rotateRight(inputMatrix));
+        Assert.assertArrayEquals(s11.existStick(), s11.rotateRight(inputMatrix));
     }
 @Test
     public void rotateLeftStick(){
         Stick s11 = new Stick();
-        Assert.assertArrayEquals(s11.leftStick(), s11.rotateLeft());
-        Assert.assertArrayEquals(s11.investedStick(), s11.rotateLeft());
-        Assert.assertArrayEquals(s11.rightStick(), s11.rotateLeft());
-        Assert.assertArrayEquals(s11.existStick(), s11.rotateLeft());
+char [][] inputMatrix = s11.existStick();
+
+        Assert.assertArrayEquals(s11.leftStick(), s11.rotateLeft(inputMatrix));
+        Assert.assertArrayEquals(s11.investedStick(), s11.rotateLeft(inputMatrix));
+        Assert.assertArrayEquals(s11.rightStick(), s11.rotateLeft(inputMatrix));
+        Assert.assertArrayEquals(s11.existStick(), s11.rotateLeft(inputMatrix));
     }
     @Test
     public void validformTT() {
@@ -175,21 +183,23 @@ public class TetrisTest {
     @Test
     public void rotateRightTT(){
         TT tt11 = new TT();
-
+        char[][] inputMatrix = tt11.existTT(); 
         
-        Assert.assertArrayEquals(tt11.rightTT(), tt11.rotateRight());
-        Assert.assertArrayEquals(tt11.investedTT(), tt11.rotateRight());
-        Assert.assertArrayEquals(tt11.leftTT(), tt11.rotateRight());
-        Assert.assertArrayEquals(tt11.existTT(), tt11.rotateRight());
+        Assert.assertArrayEquals(tt11.rightTT(), tt11.rotateRight(inputMatrix));
+        Assert.assertArrayEquals(tt11.investedTT(), tt11.rotateRight(inputMatrix));
+        Assert.assertArrayEquals(tt11.leftTT(), tt11.rotateRight(inputMatrix));
+        Assert.assertArrayEquals(tt11.existTT(), tt11.rotateRight(inputMatrix));
     }
     @Test
     public void rotateLeftTT(){
         TT tt11 = new TT();
+        char[][] inputMatrix = tt11.existTT();
 
-        Assert.assertArrayEquals(tt11.leftTT(), tt11.rotateLeft());
-        Assert.assertArrayEquals(tt11.investedTT(), tt11.rotateLeft());
-        Assert.assertArrayEquals(tt11.rightTT(), tt11.rotateLeft());
-        Assert.assertArrayEquals(tt11.existTT(), tt11.rotateLeft());
+        
+        Assert.assertArrayEquals(tt11.leftTT(), tt11.rotateLeft(inputMatrix));
+        Assert.assertArrayEquals(tt11.investedTT(), tt11.rotateLeft(inputMatrix));
+        Assert.assertArrayEquals(tt11.rightTT(), tt11.rotateLeft(inputMatrix));
+        Assert.assertArrayEquals(tt11.existTT(), tt11.rotateLeft(inputMatrix));
     }
     
     @Test
@@ -303,47 +313,75 @@ public class TetrisTest {
     @Test
     public void pieceRotateInBoard() {
         Board board1 = new Board();
-        TT tt11 = new  TT();
+        Stick tt1 = new  Stick();
         char[][] BoardExpected = {
         {'0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0' ,'0' ,'0' ,'0', '0', '0', '0', '0' ,'0'},
-        {'0', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0','0' ,'0'},
-        {'0', '1', '1', '0','0', '0', '0', '0', '0', '0', '0', '0', '0', '0','0', '0', '0', '0', '0', '0'},
-        {'0', '1', '0', '0','0', '0', '0', '0', '0', '0', '0', '0', '0', '0','0', '0', '0', '0', '0', '0'},
-        {'0', '0', '0', '0','0', '0', '0', '0', '0', '0', '0', '0', '0', '0','0', '0', '0', '0', '0', '0'},
+        {'1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0','0' ,'0'},
+        {'1', '0', '0', '0','0', '0', '0', '0', '0', '0', '0', '0', '0', '0','0', '0', '0', '0', '0', '0'},
+        {'1', '0', '0', '0','0', '0', '0', '0', '0', '0', '0', '0', '0', '0','0', '0', '0', '0', '0', '0'},
+        {'1', '0', '0', '0','0', '0', '0', '0', '0', '0', '0', '0', '0', '0','0', '0', '0', '0', '0', '0'},
         {'0', '0', '0', '0','0', '0', '0', '0', '0', '0', '0', '0', '0', '0','0', '0', '0', '0', '0', '0'},
         {'0', '0', '0', '0','0', '0', '0', '0', '0', '0', '0', '0', '0', '0','0', '0', '0', '0', '0', '0'},
         {'0', '0', '0', '0','0', '0', '0', '0', '0', '0', '0', '0', '0', '0','0', '0', '0', '0', '0', '0'},
         {'0', '0', '0', '0','0', '0', '0', '0', '0', '0', '0', '0', '0', '0','0', '0', '0', '0', '0', '0'},
         {'0', '0', '0', '0','0', '0', '0', '0', '0', '0', '0', '0', '0', '0','0', '0', '0', '0', '0', '0'},
         };
-    
-        char[][] tt1 = {
-                {'0', '1', '0'},
-                {'1', '1', '1'},
-        };
-    
-        int filaInicio = 0;
-        int columnaInicio = 0;
-    
-        board1.agregarMatriz(filaInicio, columnaInicio, tt1);
-        tt11.rotateRight();
-    
-        char[][] resultadoMoverAbajo = board1.moverMatrizAbajoSiEsPosible();
-    
-        // Imprimir la matriz resultante
-        System.out.println("Resultado:");
-        for (int i = 0; i < resultadoMoverAbajo.length; i++) {
-            for (int j = 0; j < resultadoMoverAbajo[i].length; j++) {
-                System.out.print(resultadoMoverAbajo[i][j] + " ");
+        
+            // Especificar la posición de inicio en la matriz grande donde deseas agregar la matriz de la pieza TT
+            int filaInicio = 0;
+            int columnaInicio = 0;
+            char[][] ttMatrix = tt1.existStick();
+            
+
+            // Definir la matriz de prueba de la pieza TT
+        
+            // Agregar la matriz de la pieza TT en Boardtetris
+            board1.agregarMatriz(filaInicio, columnaInicio, ttMatrix);
+            
+            tt1.rotateRight(ttMatrix);
+            
+            for (int i = 0; i < board1.Boardtetris.length; i++) {
+                for (int j = 0; j < board1.Boardtetris[i].length; j++) {
+                    System.out.print(board1.Boardtetris[i][j] + " ");
+                }
+                System.out.println(); // Cambiar de línea después de cada fila
             }
-            System.out.println(); // Nueva línea después de cada fila
+            
+            Assert.assertArrayEquals(BoardExpected, board1.moverMatrizAbajoSiEsPosible());
+
         }
-    
-        // Verificar si la matriz resultante coincide con la matriz esperada
-        Assert.assertArrayEquals(BoardExpected, resultadoMoverAbajo);
+    @Test
+    public void Rotacion(){
+        TT tt11 = new TT();
+        char[][] inputMatrix = tt11.existTT(); 
+        
+        Assert.assertArrayEquals(tt11.rightTT(), tt11.rotateRight(inputMatrix));
+        Assert.assertArrayEquals(tt11.existTT(), tt11.rotateLeft(inputMatrix));
     }
+    @Test
+    public void jajaja(){
+        Board board1 = new Board();
+        Square tt1 = new  Square();
+        Random random = new Random();
+            
+        // Especificar la posición de inicio en la matriz grande donde deseas agregar la matriz de la pieza TT
+            int columnaInicio = random.nextInt(20);;
+            int filaInicio = 1;
+       
+            char[][] ttMatrix = tt1.leftSquare();
+            tt1.rotateRight(ttMatrix);
 
+            // Agregar la matriz de la pieza TT en Boardtetris
+            board1.agregarMatriz(filaInicio, columnaInicio, ttMatrix);
+            for (int i = 0; i < board1.Boardtetris.length; i++) {
+                for (int j = 0; j < board1.Boardtetris[i].length; j++) {
+                    System.out.print(board1.Boardtetris[i][j] + " ");
+                }
+                System.out.println(); // Cambiar de línea después de cada fila
+            }
+            
 
-}
+    }
+    }
       
 

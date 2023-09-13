@@ -1,6 +1,7 @@
 package tetris;
 
 public class Board extends PieceBase{
+
     public char[][] Boardtetris = {
         {'0', '0', '0', '0','0', '0', '0', '0', '0', '0', '0', '0', '0', '0','0', '0', '0', '0', '0', '0'},
         {'0', '0', '0', '0','0', '0', '0', '0', '0', '0', '0', '0', '0', '0','0', '0', '0', '0', '0', '0'},
@@ -40,7 +41,37 @@ public class Board extends PieceBase{
         return Boardtetris; // Retorna la matriz Board actualizada
     }
 
-    public char[][] moverMatrizAbajoSiEsPosible() {
+    public char[][] moverMatrizAbajoSiEsPosible(char[][] matrizPequena) {
+        
+        int filas = matrizPequena.length;
+        int columnas = matrizPequena[0].length;
+
+        if (filaInicio + filas < Boardtetris.length) {
+            boolean filaAbajoVacia = true;
+            for (int j = 0; j < columnas; j++) {
+                if (Boardtetris[filaInicio + filas][columnaInicio + j] != '0') {
+                    filaAbajoVacia = false;
+                    break;
+                }
+            }
+
+            // Si la fila de abajo está llena de ceros, mover la matriz pequeña hacia abajo
+            if (filaAbajoVacia) {
+                for (int i = filas - 1; i >= 0; i--) {
+                    for (int j = 0; j < columnas; j++) {
+                        Boardtetris[filaInicio + i + 1][columnaInicio + j] = matrizPequena[i][j];
+                        Boardtetris[filaInicio + i][columnaInicio + j] = '0';
+                    }
+                }
+
+                filaInicio++; // Actualiza la fila de inicio
+            }
+        }
+
+        return Boardtetris; // Retorna la matriz Board actualizada
+    }
+        public char[][] moverMatrizAbajoSiEsPosible() {
+        
         int filas = matrizActual.length;
         int columnas = matrizActual[0].length;
 

@@ -3,17 +3,19 @@ package tetris;
 public class Stick extends PieceBase {
 
     
-            char[][] Stick1 = {{ '1'},
-           { '1'},
-           { '1'},
-           { '1'}};
+            char[][] Stick1 = {
+            {'1'},
+            {'1'},
+            {'1'},
+            {'1'}};
                char[][] Stick2 = {
            {'1', '1', '1', '1'}
           };
-               char[][] Stick3 = {{ '1'},
-           { '1'},
-           { '1'},
-           { '1'}};            
+               char[][] Stick3 = {
+           {'1'},
+           {'1'},
+           {'1'},
+           {'1'}};            
 
                char[][] Stick4 = {
            {'1', '1', '1', '1'}
