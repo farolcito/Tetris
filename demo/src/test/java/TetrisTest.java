@@ -10,6 +10,7 @@ import tetris.TT;
 import tetris.Tetris;
 import tetris.Stick;
 import tetris.L;
+import tetris.PieceBase;
 import tetris.Board;
 import tetris.Dog;
 
@@ -353,28 +354,39 @@ char [][] inputMatrix = s11.existStick();
     }
     @Test
     public void jajaja(){
-        Board board1 = new Board();
-        Square tt1 = new  Square();
-        Random random = new Random();
-            
-        // Especificar la posición de inicio en la matriz grande donde deseas agregar la matriz de la pieza TT
-            int columnaInicio = random.nextInt(20);;
-            int filaInicio = 1;
-       
-            char[][] ttMatrix = tt1.leftSquare();
-            tt1.rotateRight(ttMatrix);
+        PieceBase ttPiece = new TT();
+        
 
-            // Agregar la matriz de la pieza TT en Boardtetris
-            board1.agregarMatriz(filaInicio, columnaInicio, ttMatrix);
-            for (int i = 0; i < board1.Boardtetris.length; i++) {
-                for (int j = 0; j < board1.Boardtetris[i].length; j++) {
-                    System.out.print(board1.Boardtetris[i][j] + " ");
-                }
-                System.out.println(); // Cambiar de línea después de cada fila
-            }
-            
+        char[][] randomShape = ttPiece.getRandomShape();
+        
+        // Imprime la forma aleatoria
+        ttPiece.printMatrix(randomShape);
 
     }
+    @Test
+    public void Ganar(){
+    Board board = new Board();
+        board.fillLastFiveRowsWithOnes();
+        
+        board.checkAndPrintGameWon();
+        
+    }
+    @Test
+    public void Ganar1(){
+    Board board = new Board();
+    board.fillLastFiveRowsWithOnes();
+        
+    board.checkAndPrintGameWon();
+        
+    }
+    @Test
+    public void Perder(){
+    Board board = new Board();
+    if (board.checkIfGameLost()) {
+    System.out.println("¡Has perdido el juego!");
+}
+    }
+
     }
       
 

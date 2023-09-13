@@ -1,9 +1,13 @@
 package tetris;
 
-public class PieceBase implements iRotator {
+import java.util.Random;
+
+public abstract class PieceBase implements iRotator {
 int opcion;
 char[][][] arrayDeVariables;
 char[][] matrizActual; // Agregar una matriz actual
+Random random = new Random();
+public abstract char[][][] getShapes();
 
 public char[][] rotateRight(char[][] inputMatrix) {
    opcion = (opcion + 1) % 4;
@@ -51,6 +55,22 @@ public char[][] rotateRight(char[][] inputMatrix) {
 
          return inputMatrix;
    }
+   public char[][] getRandomShape() {
+    char[][][] shapes = getShapes();
+    int randomIndex = new Random().nextInt(shapes.length);
+    return shapes[randomIndex];
+}
+
+public void printMatrix(char[][] matrix) {
+    for (int i = 0; i < matrix.length; i++) {
+        for (int j = 0; j < matrix[i].length; j++) {
+            System.out.print(matrix[i][j] + " ");
+        }
+        System.out.println(); // Salto de línea para la siguiente fila
+    }
+}
+
+
 
 
 }

@@ -1,9 +1,4 @@
-
 package tetris;
-
-import java.util.Arrays;
-
-
 
 public class TT  extends PieceBase{
     char[][] TT1 = {
@@ -51,6 +46,14 @@ public class TT  extends PieceBase{
     public char[][] leftTT() {
         return TT4;
     }
-
+    @Override
+    public char[][][] getShapes() {
+        return new char[][][]{
+            TT1,
+            TT2,
+            TT3,
+            TT4
+        };
+    }
 
     }

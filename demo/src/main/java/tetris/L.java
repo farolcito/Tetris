@@ -38,4 +38,13 @@ public char[][] investedL() {
 public char[][] leftL() {
     return L4;
 }
+@Override
+    public char[][][] getShapes() {
+        return new char[][][]{
+            L1,
+            L2,
+            L3,
+            L4
+        };
+    }
 }

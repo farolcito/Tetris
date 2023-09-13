@@ -2,7 +2,6 @@ package tetris;
 
 public class Square extends PieceBase{
 
-    // Declarar cuatro matrices de tipo char
     char[][] Square1 = {
 { '1', '1' },
 { '1', '1' }
@@ -39,6 +38,16 @@ public class Square extends PieceBase{
         }
         public char[][] leftSquare() {
             return Square4;
+        }
+
+        @Override
+        public char[][][] getShapes() {
+            return new char[][][]{
+                Square1,
+                Square2,
+                Square3,
+                Square4
+            };
         }
     }
 
