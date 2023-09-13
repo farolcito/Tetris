@@ -236,7 +236,7 @@ char [][] inputMatrix = s11.existStick();
     @Test
     public void pieceMotion() {
         Board board1 = new Board();
-       
+        TT tt1 = new  TT();
         char[][] BoardExpected={
         {'0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0' ,'0' ,'0' ,'0', '0', '0', '0', '0' ,'0'},
         {'0', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0','0' ,'0'},
@@ -287,39 +287,35 @@ char [][] inputMatrix = s11.existStick();
        };
 
        // Matriz que deseas agregar
-       char[][] TT1 = {
-        {'0', '1', '0',},
-        {'1', '1', '1',},
-
-    };
-
+   
     // Especificar la posición de inicio en la matriz grande donde deseas agregar TT1
     int filaInicio = 0;       // Fila de inicio en la matriz grande
     int columnaInicio = 0;    // Columna de inicio en la matriz grande
+    char[][] inputMatrix = tt1.existTT();
+    board1.agregarMatriz(filaInicio, columnaInicio, inputMatrix);
     
-    board1.agregarMatriz(filaInicio, columnaInicio, TT1);
-    
-    Assert.assertArrayEquals(BoardExpected, board1.moverMatrizAbajoSiEsPosible());
+    Assert.assertArrayEquals(BoardExpected, board1.moverMatrizAbajoSiEsPosible(inputMatrix));
     Assert.assertArrayEquals(BoardExpected, board1.Boardtetris);
-    Assert.assertArrayEquals(BoardExpected1, board1.moverMatrizAbajoSiEsPosible());
-    Assert.assertArrayEquals(BoardExpected2, board1.moverMatrizAbajoSiEsPosible());
-    board1.moverMatrizAbajoSiEsPosible();
-    board1.moverMatrizAbajoSiEsPosible();
-    board1.moverMatrizAbajoSiEsPosible();
-    board1.moverMatrizAbajoSiEsPosible();
-    Assert.assertArrayEquals(BoardExpected3, board1.moverMatrizAbajoSiEsPosible());
+    Assert.assertArrayEquals(BoardExpected1, board1.moverMatrizAbajoSiEsPosible(inputMatrix));
+    Assert.assertArrayEquals(BoardExpected2, board1.moverMatrizAbajoSiEsPosible(inputMatrix));
+    board1.moverMatrizAbajoSiEsPosible(inputMatrix);
+    board1.moverMatrizAbajoSiEsPosible(inputMatrix);
+    board1.moverMatrizAbajoSiEsPosible(inputMatrix);
+    board1.moverMatrizAbajoSiEsPosible(inputMatrix);
+    Assert.assertArrayEquals(BoardExpected3, board1.moverMatrizAbajoSiEsPosible(inputMatrix));
 }
 
     @Test
     public void pieceRotateInBoard() {
         Board board1 = new Board();
-        Stick tt1 = new  Stick();
+        TT tt1 = new  TT();
+        
         char[][] BoardExpected = {
         {'0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0' ,'0' ,'0' ,'0', '0', '0', '0', '0' ,'0'},
-        {'1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0','0' ,'0'},
-        {'1', '0', '0', '0','0', '0', '0', '0', '0', '0', '0', '0', '0', '0','0', '0', '0', '0', '0', '0'},
-        {'1', '0', '0', '0','0', '0', '0', '0', '0', '0', '0', '0', '0', '0','0', '0', '0', '0', '0', '0'},
-        {'1', '0', '0', '0','0', '0', '0', '0', '0', '0', '0', '0', '0', '0','0', '0', '0', '0', '0', '0'},
+        {'0', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0','0' ,'0'},
+        {'0', '1', '1', '0','0', '0', '0', '0', '0', '0', '0', '0', '0', '0','0', '0', '0', '0', '0', '0'},
+        {'0', '1', '0', '0','0', '0', '0', '0', '0', '0', '0', '0', '0', '0','0', '0', '0', '0', '0', '0'},
+        {'0', '0', '0', '0','0', '0', '0', '0', '0', '0', '0', '0', '0', '0','0', '0', '0', '0', '0', '0'},
         {'0', '0', '0', '0','0', '0', '0', '0', '0', '0', '0', '0', '0', '0','0', '0', '0', '0', '0', '0'},
         {'0', '0', '0', '0','0', '0', '0', '0', '0', '0', '0', '0', '0', '0','0', '0', '0', '0', '0', '0'},
         {'0', '0', '0', '0','0', '0', '0', '0', '0', '0', '0', '0', '0', '0','0', '0', '0', '0', '0', '0'},
@@ -329,16 +325,13 @@ char [][] inputMatrix = s11.existStick();
         
             // Especificar la posición de inicio en la matriz grande donde deseas agregar la matriz de la pieza TT
             int filaInicio = 0;
-            int columnaInicio = 0;
-            char[][] ttMatrix = tt1.existStick();
-            
-
-            // Definir la matriz de prueba de la pieza TT
-        
+            int columnaInicio = 1;
+            char[][] inputMatrix = tt1.rightTT();
+ 
             // Agregar la matriz de la pieza TT en Boardtetris
-            board1.agregarMatriz(filaInicio, columnaInicio, ttMatrix);
+            board1.agregarMatriz(filaInicio, columnaInicio, inputMatrix);
             
-            tt1.rotateRight(ttMatrix);
+            tt1.rotateRight(inputMatrix);
             
             for (int i = 0; i < board1.Boardtetris.length; i++) {
                 for (int j = 0; j < board1.Boardtetris[i].length; j++) {
@@ -347,7 +340,7 @@ char [][] inputMatrix = s11.existStick();
                 System.out.println(); // Cambiar de línea después de cada fila
             }
             
-            Assert.assertArrayEquals(BoardExpected, board1.moverMatrizAbajoSiEsPosible());
+            Assert.assertArrayEquals(BoardExpected, board1.moverMatrizAbajoSiEsPosible(inputMatrix));
 
         }
     @Test

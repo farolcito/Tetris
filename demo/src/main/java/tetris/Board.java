@@ -19,6 +19,7 @@ public class Board extends PieceBase{
     int filaInicio;       // Fila de inicio en la matriz grande
     int columnaInicio;    // Columna de inicio en la matriz grande
     char[][] matrizActual; // Matriz pequeña actual
+    int rowsDeleted = 0; // Contador de filas eliminadas
 
     public char[][] agregarMatriz(int filaInicio, int columnaInicio, char[][] matrizPequena) {
         int filas = matrizPequena.length;
@@ -60,35 +61,6 @@ public class Board extends PieceBase{
                 for (int i = filas - 1; i >= 0; i--) {
                     for (int j = 0; j < columnas; j++) {
                         Boardtetris[filaInicio + i + 1][columnaInicio + j] = matrizPequena[i][j];
-                        Boardtetris[filaInicio + i][columnaInicio + j] = '0';
-                    }
-                }
-
-                filaInicio++; // Actualiza la fila de inicio
-            }
-        }
-
-        return Boardtetris; // Retorna la matriz Board actualizada
-    }
-        public char[][] moverMatrizAbajoSiEsPosible() {
-        
-        int filas = matrizActual.length;
-        int columnas = matrizActual[0].length;
-
-        if (filaInicio + filas < Boardtetris.length) {
-            boolean filaAbajoVacia = true;
-            for (int j = 0; j < columnas; j++) {
-                if (Boardtetris[filaInicio + filas][columnaInicio + j] != '0') {
-                    filaAbajoVacia = false;
-                    break;
-                }
-            }
-
-            // Si la fila de abajo está llena de ceros, mover la matriz pequeña hacia abajo
-            if (filaAbajoVacia) {
-                for (int i = filas - 1; i >= 0; i--) {
-                    for (int j = 0; j < columnas; j++) {
-                        Boardtetris[filaInicio + i + 1][columnaInicio + j] = matrizActual[i][j];
                         Boardtetris[filaInicio + i][columnaInicio + j] = '0';
                     }
                 }
@@ -148,7 +120,33 @@ public class Board extends PieceBase{
     
         return nuevaMatriz;
     }
-    
+    public void checkAndClearRows() {
+        for (int row = Boardtetris.length - 1; row >= 0; row--) {
+            boolean isRowFull = true;
+
+            // Verifica si la fila está llena de '1'
+            for (int col = 0; col < Boardtetris[row].length; col++) {
+                if (Boardtetris[row][col] != '1') {
+                    isRowFull = false;
+                    break;
+                }
+            }
+
+            if (isRowFull) {
+                // Borra la fila llena y desplaza todo lo de arriba hacia abajo
+                for (int r = row; r > 0; r--) {
+                    Boardtetris[r] = Boardtetris[r - 1].clone();
+                }
+                // Agrega una fila de '0' en la parte superior
+                for (int col = 0; col < Boardtetris[0].length; col++) {
+                    Boardtetris[0][col] = '0';
+                }
+
+                // Incrementa el contador de filas eliminadas
+                rowsDeleted++;
+            }
+        }
+    }
     /* 
         {'0', '0', '0', '0','0', '0', '0', '0', '0', '0'},
         {'0', '0', '0', '0','0', '0', '0', '0', '0', '0'},
